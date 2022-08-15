@@ -13,7 +13,7 @@ const text = `
     return(
     <div className="p-2 shadow-inner w-full py-24 shadow-white rounded-lg bg-black/90 ">   
         <motion.div 
-        animate={{x:xPos,y:yPos,borderRadius:borderRadiusValue,rotate:rotateValue}}
+        animate={{x:xPos, y:yPos, borderRadius:borderRadiusValue, rotate:rotateValue}}
         className="w-24 bg-white h-24 mx-auto  shadow-md shadow-gray-900">
         </motion.div>
     </div>)

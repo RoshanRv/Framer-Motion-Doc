@@ -47,6 +47,7 @@ const Keyframes = () => {
         <div className="w-full lg:w-max mx-auto my-10 ">
             <CopyBlock text={text} language={'jsx'} theme={dracula} highlight={'5,6,7,8,10'} />
         </div>
+        
 
 
     </div>
