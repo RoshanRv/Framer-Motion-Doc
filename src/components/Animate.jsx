@@ -3,14 +3,8 @@ import { useState } from "react"
 import { CopyBlock ,dracula} from "react-code-blocks"
 import Block from "./Block"
 import Title from "./Title"
-const Animate = () => {
 
-    const [xPos,setXPos] = useState(0)
-    const [yPos,setYPos] = useState(0)
-    const [borderRadiusValue,setBorderRadiusValue] = useState(0)
-    const [rotateValue,setRotateValue] = useState(0)
-
-    const text = `
+const text = `
     const [xPos,setXPos] = useState(0)
     const [yPos,setYPos] = useState(0)
     const [borderRadiusValue,setBorderRadiusValue] = useState(0)
@@ -25,6 +19,15 @@ const Animate = () => {
     </div>)
     //      use input:range to play with the values
     `
+
+const Animate = () => {
+
+    const [xPos,setXPos] = useState(0)
+    const [yPos,setYPos] = useState(0)
+    const [borderRadiusValue,setBorderRadiusValue] = useState(0)
+    const [rotateValue,setRotateValue] = useState(0)
+
+    
 
   return (
     <div>

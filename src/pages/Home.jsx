@@ -2,6 +2,7 @@ import { motion ,AnimatePresence} from "framer-motion"
 import { useState } from "react"
 import Animate from "../components/Animate"
 import EntryExit from "../components/EntryExit"
+import Keyframes from "../components/Keyframes"
 
 
 const Home = () => {
@@ -14,6 +15,8 @@ const Home = () => {
         <Animate />
 
         <EntryExit/>
+
+        <Keyframes/>
         
 
     </motion.div>
