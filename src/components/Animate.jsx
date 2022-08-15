@@ -39,7 +39,7 @@ const Animate = () => {
             </Block>
 
             {/*     control   */}
-            <div className="p-2 grid grid-cols-2 shadow-inner text-white text-lg shadow-white w-full py-24  rounded-lg bg-black/90 ">
+            <div className="p-2 grid grid-cols-1 lg:grid-cols-2 shadow-inner text-white text-lg shadow-white w-full py-24  rounded-lg bg-black/90 ">
 
                 <div className="flex items-center w-max gap-x-6 mx-auto  ">
                     <label className="" htmlFor="">X:</label>
@@ -66,7 +66,7 @@ const Animate = () => {
         </section>
 
         {/*             code         */}
-        <div className="w-max mx-auto my-10 ">
+        <div className="w-full lg:w-max mx-auto my-10 ">
             <CopyBlock text={text} language={'jsx'} theme={dracula} highlight={'9,10,11,12'} />
         </div>
 
