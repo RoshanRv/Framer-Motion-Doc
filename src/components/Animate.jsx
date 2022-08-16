@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion ,useScroll} from "framer-motion"
 import { useState } from "react"
 import { CopyBlock ,dracula} from "react-code-blocks"
 import Block from "./Block"
@@ -26,6 +26,9 @@ const Animate = () => {
     const [yPos,setYPos] = useState(0)
     const [borderRadiusValue,setBorderRadiusValue] = useState(0)
     const [rotateValue,setRotateValue] = useState(0)
+
+    const {scrollYProgress,scrollY} = useScroll()
+    console.log({scrollY,scrollYProgress})
 
     
 
