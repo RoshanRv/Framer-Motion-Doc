@@ -1,6 +1,7 @@
 import { motion ,AnimatePresence,useScroll} from "framer-motion"
 import { useState } from "react"
 import Animate from "../components/Animate"
+import CustomCursor from "../components/CustomCursor"
 import EntryExit from "../components/EntryExit"
 import Gestures from "../components/Gestures"
 import Keyframes from "../components/Keyframes"
@@ -39,6 +40,8 @@ const Home = () => {
         <Scroll showProgressBar={showProgressBar} setShowProgressBar={setShowProgressBar} />
 
         <Stagger/>
+
+        <CustomCursor/>
         
 
     </motion.div>
