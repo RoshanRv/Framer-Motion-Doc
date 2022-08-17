@@ -5,6 +5,7 @@ import EntryExit from "../components/EntryExit"
 import Gestures from "../components/Gestures"
 import Keyframes from "../components/Keyframes"
 import Scroll from "../components/Scroll"
+import Stagger from "../components/Stagger"
 
 
 const Home = () => {
@@ -36,6 +37,8 @@ const Home = () => {
         <Gestures/>
 
         <Scroll showProgressBar={showProgressBar} setShowProgressBar={setShowProgressBar} />
+
+        <Stagger/>
         
 
     </motion.div>
