@@ -41,7 +41,7 @@ const Home = () => {
 
         <Stagger/>
 
-        <CustomCursor/>
+        {/* <CustomCursor/> */}
         
 
     </motion.div>
