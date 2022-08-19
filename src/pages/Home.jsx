@@ -8,6 +8,8 @@ import Gestures from "../components/Gestures"
 import Keyframes from "../components/Keyframes"
 import Scroll from "../components/Scroll"
 import Stagger from "../components/Stagger"
+import ReorderList from "../components/ReorderList"
+import UseTransform from "../components/UseTransform"
 
 
 const Home = () => {
@@ -45,6 +47,10 @@ const Home = () => {
         {/* <CustomCursor/> */}
 
         <AwaitPresence/>
+
+        <ReorderList/>
+
+        <UseTransform/>
         
 
     </motion.div>
