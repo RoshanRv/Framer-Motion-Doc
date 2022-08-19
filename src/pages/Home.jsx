@@ -10,6 +10,7 @@ import Scroll from "../components/Scroll"
 import Stagger from "../components/Stagger"
 import ReorderList from "../components/ReorderList"
 import UseTransform from "../components/UseTransform"
+import SVG from "../components/SVG"
 
 
 const Home = () => {
@@ -51,6 +52,8 @@ const Home = () => {
         <ReorderList/>
 
         <UseTransform/>
+
+        {/* <SVG /> */}
         
 
     </motion.div>
