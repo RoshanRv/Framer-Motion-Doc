@@ -11,6 +11,7 @@ import Stagger from "../components/Stagger"
 import ReorderList from "../components/ReorderList"
 import UseTransform from "../components/UseTransform"
 import SVG from "../components/SVG"
+import SharedLayout from "../components/SharedLayout"
 
 
 const Home = () => {
@@ -54,6 +55,8 @@ const Home = () => {
         <UseTransform/>
 
         {/* <SVG /> */}
+
+        <SharedLayout/>
         
 
     </motion.div>
