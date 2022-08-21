@@ -1,4 +1,4 @@
-import React ,{useRef} from 'react';
+import React ,{useRef,useEffect} from 'react';
 import { motion,useIsPresent,useScroll,useTransform,useSpring} from 'framer-motion'
 import { Link } from 'react-router-dom';
 import PrivacyScreen from '../components/PrivacyScreen';
@@ -30,9 +30,9 @@ const ImageCont = ({datum})=>{
   const y = useTransform(scrollYProgress,[0,1],[-100,100])
   return(
     <div  ref={ref}
-    className='flex items-center mx-auto my-40' >
+    className='flex items-center mx-auto my-40 z-20' >
       <motion.div className='h-[30rem] w-[40rem] '>
-        <img src={datum.img} alt="Places Of India" className='w-full h-full grayscale' />
+        <img src={datum.img} alt="Places Of India" className='w-full h-full rayscale z-20' />
       </motion.div>
       <motion.h1 
       className="text-black text-[15rem] -ml-20 z-20 font-bold"
@@ -47,11 +47,17 @@ const Parallax = () => {
 
     const isPresent = useIsPresent()
     const {scrollYProgress} =useScroll()
+    const slideN = useTransform(scrollYProgress,[0,1],[-800,800])
+    const slideB = useTransform(scrollYProgress,[0,1],[400,-400])
     const scaleX = useSpring(scrollYProgress,{
       stiffness: 100,
       damping: 30,
       restDelta: 0.001
     }) 
+
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
 
   return (
     <motion.div className='p-5  bg-gradient-to-br from-sky-500 to-blue-600 ' 
@@ -60,6 +66,20 @@ const Parallax = () => {
       <div className='flex flex-col ' >
       {data.map((datum,i)=><ImageCont datum={datum} key={i} />)}
       </div>
+
+      {/*     text slide */}
+          <div className="fixed text-left text-black/20 z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[13rem]  whitespace-nowrap font-bold">
+            <motion.h1 
+            className='text-left'
+            style={{x:slideN}}
+            >INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA</motion.h1>
+            <motion.h1 className=''
+            style={{x:slideB}}
+            >INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA</motion.h1>
+          </div>
+         
+
+      {/*  */}
 
       {/*     Progress */}
       <motion.div 
