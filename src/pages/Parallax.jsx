@@ -32,11 +32,11 @@ const ImageCont = ({datum})=>{
   return(
     <div  ref={ref}
     className='flex items-center mx-auto my-40 z-20' >
-      <motion.div className='h-[30rem] w-[40rem] '>
+      <motion.div className='md:h-[30rem] h-[12rem] w-[18rem] md:w-[40rem] '>
         <img src={datum.img} alt="Places Of India" className='w-full h-full rayscale z-20' />
       </motion.div>
       <motion.h1 
-      className="text-black text-[15rem] -ml-20 z-20 font-bold"
+      className="text-black text-[10rem] md:text-[15rem] -ml-24 md:-ml-20 z-20 font-bold"
       style={{y}}
       >{datum.id}</motion.h1>
     </div> 
@@ -94,7 +94,7 @@ const Parallax = () => {
         </div>
 
         {/*     text slide */}
-            <div className="fixed select-none text-left text-black/20 z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[13rem]  whitespace-nowrap font-bold">
+            <div className="fixed select-none text-left text-black/20 z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8rem] md:text-[13rem]  whitespace-nowrap font-bold">
               <motion.h1 
               className='text-left'
               style={{x:slideN}}
