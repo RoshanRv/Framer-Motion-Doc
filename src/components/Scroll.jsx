@@ -21,7 +21,7 @@ const popTxt=`
             <motion.div 
             initial={{y:300,rotate:-12}}
             whileInView={{y:-40,rotate:-12}}
-            transition={{duration:.4,type:'spring',bounce:0.5}}
+            transition={{duration:.4,type: 'spring' , bounce: 0.5}}
             className="w-60-rotate-12 h-80 bg-white mx-auto rounded-lg"/>
         </div>
     </Block>
@@ -63,13 +63,13 @@ const Scroll = ({showProgressBar,setShowProgressBar}) => {
             </div>
 
             <Block>
-                <div className="w-80 relative flex items-end mx-auto h-[30rem] overflow-hidden bg-gradient-to-br from-sky-500 to-blue-600 rounded-b-lg">
+                <div className="w-60 md:w-80 relative flex items-end mx-auto h-[30rem] overflow-hidden bg-gradient-to-br from-sky-500 to-blue-600 rounded-b-lg">
                     <div className="absolute -top-20 -left-20 bg-[#030c17] w-[40rem] h-[27rem] rotate-12 "></div>
                     <motion.div 
                     initial={{y:300,rotate:-12}}
                     whileInView={{y:-40,rotate:-12}}
                     transition={{duration:.4,type:'spring',bounce:0.5}}
-                    className="w-60 shadow-2xl -rotate-12 h-80 bg-white mx-auto rounded-lg text-4xl font-bold text-center flex flex-col justify-center ">Scroll Triggered</motion.div>
+                    className="w-52 lg:w-60 shadow-2xl -rotate-12 h-80 bg-white mx-auto rounded-lg text-4xl font-bold text-center flex flex-col justify-center ">Scroll Triggered</motion.div>
                 </div>
                
             </Block>

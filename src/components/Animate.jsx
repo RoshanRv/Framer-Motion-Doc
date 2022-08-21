@@ -7,13 +7,13 @@ import Title from "./Title"
 const text = `
     const [xPos,setXPos] = useState(0)
     const [yPos,setYPos] = useState(0)
-    const [borderRadiusValue,setBorderRadiusValue] = useState(0)
+    const [borderRadiusValue, setBorderRadiusValue] = useState(0)
     const [rotateValue,setRotateValue] = useState(0)
  
     return(
     <div className="p-2 shadow-inner w-full py-24 shadow-white rounded-lg bg-black/90 ">   
         <motion.div 
-        animate={{x:xPos, y:yPos, borderRadius:borderRadiusValue, rotate:rotateValue}}
+        animate={{x:xPos, y:yPos, borderRadius: borderRadiusValue, rotate:rotateValue}}
         className="w-24 bg-white h-24 mx-auto  shadow-md shadow-gray-900">
         </motion.div>
     </div>)
@@ -58,7 +58,7 @@ const Animate = () => {
                     <span>{yPos}</span>
                 </div>
 
-                <div className="flex items-center w-max gap-x-6 mx-auto  ">
+                <div className="flex items-center w-max gap-x-1 lg:gap-x-6 mx-auto  ">
                     <label className="" htmlFor="">Border Radius:</label>
                     <input className="outline-0 " type={'range'} min={0} max={50} value={borderRadiusValue} onChange={e=>setBorderRadiusValue(Number(e.target.value))} />
                     <span className="" >{borderRadiusValue}</span>

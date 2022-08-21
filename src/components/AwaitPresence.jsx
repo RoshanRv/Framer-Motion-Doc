@@ -38,7 +38,7 @@ const AwaitPresence = () => {
   return (
     <div>
         <Title>Exit Before Enter</Title>
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
             {/*             code         */}
             <div className="w-full  mx-auto my-10 ">

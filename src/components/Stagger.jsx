@@ -38,7 +38,7 @@ const parent={
     hidden:{opacity:0},
     visible:{opacity:1,
         transition:{
-//you can use these if u want stagger effect on initial stage instead of whileInView     
+//you can use these if u want stagger effect on initial stage instead of whileInView  
             // delayChildren:2,
             // staggerChildren:.1
         }},}
@@ -75,7 +75,7 @@ const Stagger = () => {
         <div className="grid grid-cols-1 gap-x-10 lg:grid-cols-2">
             <Block>
                 <motion.div
-                className='p-5 rounded-lg bg-white w-max grid grid-cols-2 lg:grid-cols-4 mx-auto'
+                className='p-5 rounded-lg bg-white w-max grid grid-cols-4 lg:grid-cols-4 mx-auto'
                 variants={parent}
                 initial='hidden'
                 animate='visible'
@@ -104,7 +104,7 @@ export default Stagger
 const Child = ({custom})=>{
     return(
         <motion.div 
-        className='w-20 h-20 bg-gradient-to-bl from-sky-500 to-blue-700 rounded-lg m-2'
+        className='lg:w-16 lg:h-16 w-10 h-10 bg-gradient-to-bl from-sky-500 to-blue-700 rounded-lg m-2'
         variants={child}
         custom={custom}
         >
