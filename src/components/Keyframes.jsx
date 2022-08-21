@@ -27,7 +27,7 @@ const Keyframes = () => {
         <Block>
             <motion.div 
             animate={{
-                x:[0,0,0,0,0,0,0,200],
+                x:[0,0,0,0,0,0,0,300],
                 rotate:[0,45,360,90,270,0] ,
                 scale:[1,.7,1.2,.3,1.9,1],
                 borderRadius:[0,10,40,0,50,0]
@@ -39,7 +39,7 @@ const Keyframes = () => {
             animate={{opacity:[0,1]}}
             transition={{times:[0.9,1],repeat:Infinity, repeatDelay:2,duration:5}}
             >
-                    Keyframes
+                    Framer-Motion-Doc
             </motion.h1>
         </Block>
 
