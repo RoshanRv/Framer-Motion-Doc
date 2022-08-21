@@ -2,7 +2,7 @@ import { motion ,AnimatePresence} from "framer-motion"
 import {Routes,Route, useLocation} from 'react-router-dom'
 import {useState} from 'react'
 import Home from "./pages/Home"
-import RoutePage from "./pages/RoutePage"
+import Parallax from "./pages/Parallax"
 
 const divVariant={
   hidden:{
@@ -41,9 +41,9 @@ function App() {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <Routes location={location} key={location.key} >
+      <Routes  key={location.key} location={location} >
           <Route path="/" element={<Home/>}/>
-          <Route path='/route' element={<RoutePage/>}/>
+          <Route path='/parallax' element={<Parallax/>}/>
       </Routes>
     </AnimatePresence>
     

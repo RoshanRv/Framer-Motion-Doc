@@ -33,24 +33,21 @@ const SharedLayout = () => {
                         
                         return (
                             <>
-                            <motion.div 
-                            onClick={()=>setIsSelected(i)} 
-                            initial={false}
-                            animate={{fontSize:isSelected==i?'5rem':'2rem',}}
-                            key={i}
-                            style={{color:isSelected==i?datum.color:'#fff'}} 
-                            className='cursor-pointer relative'  >
-                                {datum.title}
+                                <motion.div 
+                                onClick={()=>setIsSelected(i)} 
+                                initial={false}
+                                animate={{fontSize:isSelected==i?'5rem':'2rem',}}
+                                key={i}
+                                style={{color:isSelected==i?datum.color:'#fff'}} 
+                                className='cursor-pointer relative'  >
+                                    {datum.title}
 
-                                {isSelected==i&&<motion.div 
-                            className="absolute bg-white  -bottom-10  left-0 w-full h-2"
-                            style={{backgroundColor:datum.color}}
-                            />}
-                                
-                            </motion.div>
-
-                              
-
+                                    {isSelected==i&&<motion.div 
+                                className="absolute bg-white  -bottom-10  left-0 w-full h-2"
+                                style={{backgroundColor:datum.color}}
+                                />}
+                                    
+                                </motion.div>
                             </>
                             
                         )
