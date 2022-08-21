@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* right: 0; */
-    height: 10px;
-    background: red;
-    transform-origin: 0%;
-  }
+
+  .beat{
+    animation-name: heart;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes heart{
+    0%{
+        transform: scale(1);
+    }
+
+    90%{
+        transform: scale(0.7);
+    }
+
+    
+}

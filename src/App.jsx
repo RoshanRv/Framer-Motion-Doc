@@ -3,6 +3,7 @@ import {Routes,Route, useLocation} from 'react-router-dom'
 import {useState} from 'react'
 import Home from "./pages/Home"
 import Parallax from "./pages/Parallax"
+import Footer from "./components/Footer"
 
 const divVariant={
   hidden:{
@@ -45,6 +46,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path='/parallax' element={<Parallax/>}/>
       </Routes>
+      <Footer/>
     </AnimatePresence>
     
     
