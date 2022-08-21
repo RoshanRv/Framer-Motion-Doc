@@ -3,6 +3,7 @@ import { motion,useIsPresent,useScroll,useTransform,useSpring} from 'framer-moti
 import { Link } from 'react-router-dom';
 import PrivacyScreen from '../components/PrivacyScreen';
 import Title from '../components/Title';
+import CustomCursor from '../components/CustomCursor'
 
 const data = [
   {
@@ -42,6 +43,30 @@ const ImageCont = ({datum})=>{
   )
 }
 
+const Progress = ({scaleX})=>{
+  
+  return(
+      <motion.div 
+      className="fixed  cursor-default left-0 bottom-0 right-0 bg-gradient-to-br from-sky-500 to-blue-600 z-40  "
+      >
+            <motion.div 
+          className="absolute  top-0 left-0  right-0 bg-white h-2 "
+          style={{scaleX}}
+          ></motion.div>
+
+        <Link to={'/'} >
+        <motion.button 
+                className=' text-lg bg-black my-6 text-white px-10 py-2 rounded-full w-max block mx-auto font-bold'
+                whileHover={{scale:1.2}}
+                whileTap={{scale:0.8}}
+                >Back
+                </motion.button>
+        </Link>
+
+      </motion.div>
+  )
+}
+
 //  Main Comp
 const Parallax = () => {
 
@@ -62,45 +87,28 @@ const Parallax = () => {
   return (
     <motion.div className='p-5  bg-gradient-to-br from-sky-500 to-blue-600 ' 
      >
-      <Title>Parallax</Title>
-      <div className='flex flex-col ' >
-      {data.map((datum,i)=><ImageCont datum={datum} key={i} />)}
+      <div className="">
+        <Title>Parallax</Title>
+        <div className='flex flex-col ' >
+        {data.map((datum,i)=><ImageCont datum={datum} key={i} />)}
+        </div>
+
+        {/*     text slide */}
+            <div className="fixed select-none text-left text-black/20 z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[13rem]  whitespace-nowrap font-bold">
+              <motion.h1 
+              className='text-left'
+              style={{x:slideN}}
+              >INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA</motion.h1>
+              <motion.h1 className=''
+              style={{x:slideB}}
+              >INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA</motion.h1>
+            </div>
+          
+
+        {/*  */}
       </div>
-
-      {/*     text slide */}
-          <div className="fixed text-left text-black/20 z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[13rem]  whitespace-nowrap font-bold">
-            <motion.h1 
-            className='text-left'
-            style={{x:slideN}}
-            >INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA</motion.h1>
-            <motion.h1 className=''
-            style={{x:slideB}}
-            >INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA</motion.h1>
-          </div>
-         
-
-      {/*  */}
-
-      {/*     Progress */}
-      <motion.div 
-      className="fixed  left-0 bottom-0 right-0 bg-gradient-to-br from-sky-500 to-blue-600 -z-0  "
-      >
-            <motion.div 
-          className="absolute  top-0 left-0  right-0 bg-white h-2 -z-0"
-          style={{scaleX}}
-          ></motion.div>
-
-        <Link to={'/'} >
-        <motion.button 
-                className=' text-lg bg-black my-6 text-white px-10 py-2 rounded-full w-max block mx-auto font-bold'
-                whileHover={{scale:1.2}}
-                whileTap={{scale:0.8}}
-                >Back
-                </motion.button>
-        </Link>
-
-      </motion.div>
       
+    <Progress scaleX={scaleX}/>
     <PrivacyScreen isPresent={isPresent}  />
     </motion.div>
   )
