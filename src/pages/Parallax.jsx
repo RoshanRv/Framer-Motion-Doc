@@ -3,7 +3,6 @@ import { motion,useIsPresent,useScroll,useTransform,useSpring} from 'framer-moti
 import { Link } from 'react-router-dom';
 import PrivacyScreen from '../components/PrivacyScreen';
 import Title from '../components/Title';
-import CustomCursor from '../components/CustomCursor'
 
 const data = [
   {
