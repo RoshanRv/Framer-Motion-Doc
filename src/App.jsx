@@ -7,7 +7,7 @@ import Footer from "./components/Footer"
 
 const divVariant={
   hidden:{
-    x:'-100vw',
+    x:'-190vw',
   },
   visible:{
     x:0
